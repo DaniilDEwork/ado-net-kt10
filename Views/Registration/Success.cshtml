@@ -1,0 +1,13 @@
+@model UserResponse
+@{ ViewData["Title"] = "Регистрация завершена"; }
+<h1>Регистрация завершена</h1>
+<p class="success">Пользователь успешно зарегистрирован</p>
+<dl class="details">
+    <dt>ID</dt><dd>@Model.Id</dd>
+    <dt>Имя пользователя</dt><dd>@Model.UserName</dd>
+    <dt>Электронная почта</dt><dd>@Model.Email</dd>
+</dl>
+<div class="actions">
+    <a class="button" asp-controller="Home" asp-action="Users">Открыть список пользователей</a>
+    <a class="button" asp-action="Index">К форме регистрации</a>
+</div>

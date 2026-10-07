@@ -1,0 +1,30 @@
+@model RegistrationRequest
+@{ ViewData["Title"] = "Задание 1"; }
+<h1>Задание 1</h1>
+<p>Веб-форма регистрации пользователей</p>
+<form asp-action="Index" method="post" novalidate>
+    <div asp-validation-summary="All" role="alert"></div>
+    <div class="form-grid">
+        <div>
+            <label asp-for="UserName">Имя пользователя</label>
+            <input asp-for="UserName" autocomplete="username" maxlength="100">
+            <p class="hint">Не менее 3 символов, только буквы, без пробелов и цифр</p>
+        </div>
+        <div>
+            <label asp-for="Email">Электронная почта</label>
+            <input asp-for="Email" type="email" autocomplete="email" maxlength="100">
+            <p class="hint">Адрес должен содержать @@ и точку в домене</p>
+        </div>
+        <div>
+            <label asp-for="Password">Пароль</label>
+            <input asp-for="Password" type="password" autocomplete="new-password" maxlength="100">
+            <p class="hint">Не менее 8 символов, должен содержать буквы и цифры</p>
+        </div>
+        <div>
+            <label asp-for="ConfirmPassword">Подтверждение пароля</label>
+            <input asp-for="ConfirmPassword" type="password" autocomplete="new-password" maxlength="100">
+            <p class="hint">Должно совпадать с паролем</p>
+        </div>
+    </div>
+    <button type="submit">Зарегистрироваться</button>
+</form>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - КТ-10</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="site-title">КТ-10 - Регистрация и управление пользователями</p>
+            <nav>
+                <a asp-controller="Home" asp-action="Index">Главная</a>
+                <a asp-controller="Registration" asp-action="Index">Задание 1</a>
+                <a asp-controller="Home" asp-action="Users">Задание 2</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container content">@RenderBody()</main>
+    <footer class="container">ADO.NET - ASP.NET Core MVC - КТ-10</footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

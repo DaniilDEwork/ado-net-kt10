@@ -1,0 +1,40 @@
+@{ ViewData["Title"] = "Задание 2"; }
+<h1>Задание 2</h1>
+<p>RESTful API для управления данными пользователей</p>
+<div class="request-grid">
+    <section>
+        <h2 id="form-title">Добавление пользователя</h2>
+        <form id="user-form" novalidate>
+            <label for="name">Имя пользователя</label><input id="name" maxlength="100">
+            <label for="email">Электронная почта</label><input id="email" type="email" maxlength="100">
+            <button type="submit" id="save-user">Добавить пользователя</button>
+            <button type="button" id="reset-user">Очистить форму</button>
+        </form>
+    </section>
+    <section>
+        <h2>Получение пользователя по ID</h2>
+        <form id="lookup-form" novalidate>
+            <label for="lookup-id">ID пользователя</label><input id="lookup-id" inputmode="numeric" maxlength="20" placeholder="Например, 1">
+            <button type="submit">Получить по ID</button>
+        </form>
+        <p class="hint">Имя должно содержать только буквы и быть не короче 3 символов</p>
+        <p class="hint">Почта должна содержать @@ и точку в домене</p>
+    </section>
+</div>
+<h2>Пользователи</h2>
+<button type="button" id="refresh-users">Получить список</button>
+<div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Имя пользователя</th><th>Почта</th><th>Действия</th></tr></thead>
+    <tbody id="users-body"></tbody>
+</table></div>
+<h2>Ответ сервера</h2>
+<dl class="response-info">
+    <dt>Метод и URL</dt><dd id="response-url">Запрос ещё не отправлен</dd>
+    <dt>Статус</dt><dd id="response-status">Запрос ещё не отправлен</dd>
+</dl>
+<pre id="response-body" class="preview">Здесь появится ответ API</pre>
+<p id="error" class="error" role="alert"></p>
+@section Scripts {
+    <script src="~/js/common.js" asp-append-version="true"></script>
+    <script src="~/js/users.js" asp-append-version="true"></script>
+}
